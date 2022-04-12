@@ -2,7 +2,7 @@
 
 /**
   * print_sign - check main.
-  * @c: An input character
+  * @n: An input character
   * Description: Function prints the sign of the number
   * Return: 1 if number is positive, 0 if number is zero,
   * -1 if number is negative.
@@ -17,7 +17,7 @@ int print_sign(int n)
 		_putchar('+');
 	}
 
-	else if (n ==0)
+	else if (n == 0)
 	{
 		test = 0;
 		_putchar('0');
