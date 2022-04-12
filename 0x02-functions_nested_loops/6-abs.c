@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * -abs - check main.
+  * _abs - check Description
   * @r: An input character
   * Description: Function return absolute value of a number
   * Return:  return absolute value of a number
