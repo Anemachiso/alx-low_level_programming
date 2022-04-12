@@ -2,11 +2,11 @@
 
 /**
   * -abs - check main.
-  * @c: An input character
+  * @r: An input character
   * Description: Function return absolute value of a number
   * Return:  return absolute value of a number
   */
-int _abs(int)
+int _abs(int r)
 {
 	if (r >= 0)
 		return (r);
