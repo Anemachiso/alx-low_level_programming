@@ -2,11 +2,11 @@
 
 /**
   * print_last_digit - check main.
-  * @c: An input character
+  * @r: An input character
   * Description: Function print the last digit of a number
   * Return: print last digit of number r.
   */
-int print_last_digit(int)
+int print_last_digit(int r)
 {
 	int n;
 
