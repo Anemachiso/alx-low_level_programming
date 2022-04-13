@@ -1,5 +1,5 @@
 #include "main.h"
- 
+
 /**
 * print_times_table - check main
 * @n: An integer to be inter.
@@ -22,7 +22,7 @@ void print_times_table(int n)
 				{
 					if (j != 0)
 						_putchar(' ');
-					_putchar(p + '0');
+					_putchar(p + '0' + '0');
 					if (j == n)
 						continue;
 					_putchar(',');
@@ -32,8 +32,8 @@ void print_times_table(int n)
 
 				else
 				{
-					_putchar((p / 10) + '0');
-					_putchar((p % 10) + '0');
+					_putchar((p / 10) + '0' + '0');
+					_putchar((p % 10) + '0' + '0');
 					if (j == n)
 						continue;
 					_putchar(',');
