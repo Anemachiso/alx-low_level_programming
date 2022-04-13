@@ -48,13 +48,13 @@ void print_times_table(int n)
 				else
 				{
 					int d = p / 10;
+
 					_putchar((d / 10) + '0');
 					_putchar((d % 10) + '0');
 					_putchar((p % 10) + '0');
 					if (j == n)
 						continue;
 					_putchar(',');
-					_putchar(' ');
 					_putchar(' ');
 				}
 			}
