@@ -17,42 +17,31 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				p = i * j;
-				if ((p / 10) == 0)
+				if (j != 0)
 				{
-					if (j != 0)
-					{
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar(p + '0');
-					if (j == n)
-						continue;
 					_putchar(',');
 					_putchar(' ');
 				}
-				else if ((p / 100) == 0)
+				if (p < 10 && j != 0)
 				{
-					if (j != 0)
-						_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((p % 10) + '0');
+				}
+				else if (p >= 10 && p < 100)
+				{
+					_putchar(' ');
 					_putchar((p / 10) + '0');
 					_putchar((p % 10) + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
-					_putchar(' ');
+				}
+				else if (p >= 100 && j != 0)
+				{
+					_putchar((p / 100) + '0');
+					_putchar((p / 10) % 10 + '0');
+					_putchar((p % 10) + '0');
 				}
 				else
-				{
-					int d = p / 10;
-
-					_putchar((d / 10) + '0');
-					_putchar((d % 10) + '0');
 					_putchar((p % 10) + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
-					_putchar(' ');
-				}
 			}
 			_putchar('\n');
 		}
