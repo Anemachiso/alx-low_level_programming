@@ -26,26 +26,32 @@ void print_times_table(int n)
 						_putchar(p + '0');
 						if (j == n)
 							continue;
-						printf("%d, %d", ',', ' ');
+						_putchar(',');
+						_putchar(' ');
 					}
 					else
 					{
 						if (j != 0)
 							_putchar(' ');
-						printf("%d, %d", (p / 10) + '0', (p % 10) + '0');
+						_putchar((p / 10) + '0');
+						 _putchar((p % 10) + '0');
 						if (j == n)
 							continue;
-						printf("%d, %d", ',', ' ');
+						_putchar(',');
+						_putchar(' ');
 					}
 				}
 				else
 				{
 					int d = p / 10;
 
-					printf("%d, %d, %d", (d / 10) + '0', (d % 10) + '0', (p % 10) + '0');
+					_putchar((d / 10) + '0');
+					_putchar((d % 10) + '0');
+					_putchar((p % 10) + '0');
 					if (j == n)
 						continue;
-					printf("%d, %d", ',', ' ');
+					_putchar(',');
+					_putchar(' ');
 				}
 			}
 			_putchar('\n');
