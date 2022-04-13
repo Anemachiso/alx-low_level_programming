@@ -8,8 +8,7 @@
 */
 void print_times_table(int n)
 {
-	int i, j;
-	long int p;
+	int i, j, p;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -18,7 +17,6 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				p = i * j;
-
 				if ((p / 100) == 0)
 				{
 					if ((p / 10) == 0)
@@ -28,34 +26,26 @@ void print_times_table(int n)
 						_putchar(p + '0');
 						if (j == n)
 							continue;
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
+						printf("%d, %d", ',', ' ');
 					}
-
 					else
 					{
-						_putchar((p / 10) + '0');
-						_putchar((p % 10) + '0');
+						if (j != 0)
+							_putchar(' ');
+						printf("%d, %d", (p / 10) + '0', (p % 10) + '0');
 						if (j == n)
 							continue;
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
+						printf("%d, %d", ',', ' ');
 					}
 				}
-
 				else
 				{
 					int d = p / 10;
 
-					_putchar((d / 10) + '0');
-					_putchar((d % 10) + '0');
-					_putchar((p % 10) + '0');
+					printf("%d, %d, %d", (d / 10) + '0', (d % 10) + '0', (p % 10) + '0');
 					if (j == n)
 						continue;
-					_putchar(',');
-					_putchar(' ');
+					printf("%d, %d", ',', ' ');
 				}
 			}
 			_putchar('\n');
