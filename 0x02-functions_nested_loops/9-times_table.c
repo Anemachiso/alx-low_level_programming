@@ -31,7 +31,6 @@ void times_table(void)
 			{
 				_putchar((n / 10) + '0');
 				_putchar((n % 10) + '0');
-				
 				if (j == 9)
 					continue;
 				_putchar(',');
@@ -41,5 +40,4 @@ void times_table(void)
 		}
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
