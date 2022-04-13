@@ -19,22 +19,38 @@ void print_times_table(int n)
 			{
 				p = i * j;
 
-				if ((p / 10) == 0)
+				if ((p / 100) == 0)
 				{
-					if (j != 0)
+					if ((p / 10) == 0)
+					{
+						if (j != 0)
+							_putchar(' ');
+						_putchar(p + '0');
+						if (j == n)
+							continue;
+						_putchar(',');
 						_putchar(' ');
-					_putchar(p + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+						_putchar(' ');
+					}
+
+					else
+					{
+						_putchar((p / 10) + '0');
+						_putchar((p % 10) + '0');
+						if (j == n)
+							continue;
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+					}
 				}
 
 				else
 				{
-					_putchar((p / 10) + '0');
-					_putchar((p % 10) + '0');
+					int d = p / 10;
+					_putchar((d / 10) + '0');
+					_putchar((d % 10) + '0');
+					_putchar((p % 1o0) + '0');
 					if (j == n)
 						continue;
 					_putchar(',');
@@ -42,7 +58,7 @@ void print_times_table(int n)
 					_putchar(' ');
 				}
 			}
-			_putchar('\n');
+			-putchar('\n');
 		}
 	}
 }
