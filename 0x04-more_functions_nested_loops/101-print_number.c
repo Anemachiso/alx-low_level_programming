@@ -2,11 +2,12 @@
 /**
  * print_number - prints a number
  * @n: Input number
+ * Return: Nothing
  */
 
 void print_number(int n)
 {
-	long len, res, i, temp, expo;
+	long int len, res, i, temp, expo;
 
 	res = n;
 	expo = len =  1;
