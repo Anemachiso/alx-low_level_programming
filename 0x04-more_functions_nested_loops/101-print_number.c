@@ -20,6 +20,7 @@ void print_number(int n)
 	}
 
 	temp = res;
+
 	while (temp >= 10)
 	{
 		len++;
