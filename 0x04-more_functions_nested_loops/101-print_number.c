@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,7 +9,7 @@ int _putchar(char c);
  *
  * @n: params an integer
  *
- * No return
+ * Return: nothing
  */
 
 
