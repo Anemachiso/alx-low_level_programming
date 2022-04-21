@@ -8,7 +8,7 @@
  * Return: nothing
  */
 
-void my_putchar(long n) 
+void print_number(int n)
 {
 	unsigned int n1;
 
