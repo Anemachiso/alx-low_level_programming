@@ -26,7 +26,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0' && k < count; i++)
 	{
-		if (str[i] != ' ' || str[i] != '\t')
+		if (str[i] != ' ' && str[i] != '\t')
 		{
 			len = 0;
 			j = i;
