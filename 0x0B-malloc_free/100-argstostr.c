@@ -1,66 +1,44 @@
-#include <stdlib.h>
 #include "main.h"
-int _strlen(char *s);
+#include <stdlib.h>
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
+ * argstostr - A function that concatenates all arguments of your program
+ * @ac: number of arguments
+ * @av: array containing arguments
+ * Return: A pointer to string that containing all arguments
+ * or NULL if ac == 0, if av == NULL, or upon failure
  */
-
-int _strlen(char *s)
-{
-	int l = 0;
-
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-	return (l);
-}
-
-/**
- * argstostr - concat
- * @ac: count
- * @av: vector
- * Return: string
- */
-
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
-	int len, R = 0;
-	char *p;
+	char *new_str;
+	int len = 0, i = 0, j, k = 0;
 
-	if (!ac || !av)
-	{
+	if (ac <= 0 || av == NULL)
 		return (NULL);
+
+	for (; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+			len++;
+		len++;
 	}
-	R = 0;
+
+	len++;
+	new_str = malloc(len * sizeof(char));
+	if (new_str == NULL)
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		len = _strlen(av[i]) + 1;
-		R += len;
-	}
-	p = malloc(sizeof(char) * R + 1);
-
-	if (!p)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; i < ac; i++)
-	{
-		len = _strlen(av[i]);
-
-		for (j = 0; j < len; j++, k++)
+		for (j = 0; av[i][j]; j++)
 		{
-			p[k] = av[i][j];
+			new_str[k] = av[i][j];
+			k++;
 		}
-		p[k++] = '\n';
+		new_str[k] = '\n';
+		k++;
 	}
-	p[k] = '\0';
-	return (p);
+
+	new_str[k] = '\0';
+	return (new_str);
 }
