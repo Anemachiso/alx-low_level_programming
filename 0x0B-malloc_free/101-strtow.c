@@ -18,7 +18,7 @@ int _count(char *s)
 				count += 1;
 		i++;
 	}
-	return (count)
+	return (count);
 }
 
 /**
@@ -35,12 +35,12 @@ char **strtow(char *str)
 
 	if (!str || !*str)
 		return (NULL);
-	if (_count(char *s) == 0)
+	if (_count(*str) == 0)
 	{
 		return (NULL);
 	}
-	_count(char *s) += 1;
-	f = malloc(sizeof(char *) * _count(char *s);
+	_count(*str) += 1;
+	f = malloc(sizeof(char *) * _count(*str);
 
 	if (!f)
 		return (NULL);
