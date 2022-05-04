@@ -2,6 +2,26 @@
 #include <stdlib.h>
 
 /**
+ * _count - count
+ * @s input pointer
+ * return: int
+*/
+
+int _count(char *s)
+{
+	int count = 0, i = 0;
+	
+	while (*(s + i))
+	{
+		if (*(s + i) != ' ')
+			if (*(s + i + 1) == ' ' || *(s + i + 1) == 0)
+				count += 1;
+		i++;
+	}
+	return (count)
+}
+
+/**
  * strtow - char
  * @str: pointer to string params
  * Return: char
@@ -15,19 +35,12 @@ char **strtow(char *str)
 
 	if (!str || !*str)
 		return (NULL);
-	while (*(str + i))
-	{
-		if (*(str + i) != ' ')
-			if (*(str + i + 1) == ' ' || *(str + i + 1) == 0)
-				count += 1;
-		i++;
-	}
-	if (count == 0)
+	if (_count(char *s) == 0)
 	{
 		return (NULL);
 	}
-	count += 1;
-	f = malloc(sizeof(char *) * count);
+	_count(char *s) += 1;
+	f = malloc(sizeof(char *) * _count(char *s);
 
 	if (!f)
 		return (NULL);
