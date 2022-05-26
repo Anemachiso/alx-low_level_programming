@@ -19,5 +19,5 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		vai1 = 2 * val1 + (b[i] - '0');
 	}
-	return (dec_val);
+	return (val1);
 }
