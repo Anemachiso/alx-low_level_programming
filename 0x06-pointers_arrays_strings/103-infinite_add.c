@@ -39,7 +39,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			overflow = 0;
 		if (digits < 0)
 			return (0);
-		r[digits] = (temp_tot % 10) + '0';
+		r[digits-1] = (temp_tot % 10) + '0';
 		digits--;
 		j--, i--, d++;
 	}
