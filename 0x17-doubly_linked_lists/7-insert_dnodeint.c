@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
  * insert_dnodeint_at_index - insert node at specific index
@@ -11,41 +12,42 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	int tmp = idx;
-	dlistint_t *current;
-	dlistint_t *new;
-
-	if (h == NULL)
-		return (0);
-
+	int i;
+	dlistint_t * new_node, *tmp, *current;
 	current = *h;
 
-	while (tmp != 0)
-	{
+	while (current != NULL)
 		current = current->next;
-		tmp--;
-		if (current == NULL)
-			return (NULL);
+
+	tmp = *h;
+	i=1;
+
+	while (i < idx-1 && tmp != NULL)
+	{
+		tmp = tmp->next;
+		i++;
 	}
 
 	if (idx == 1)
-		add_dnodeint(head, n);
+		add_dnodeint(h, n);
 
-	new = malloc(sizeof(dlistint_t));
+	else if (tmp == current)
+		add_dnodeint_end(h, n);
 
-	if (new == NULL)
+	else if (tmp != NULL)
 	{
-		free(new);
-		return (NULL);
+		new_node = malloc(sizeof(dlistint_t));
+		new_node->num = n;
+		new_node->next = tmp->next;
+		new_node->prev = tmp;
+
+		if (tmp->next != NULL)
+			tmp->next->prev = new_node;
+		tmp->next = new_node;
 	}
 
-	new->n = n;
-	new->next = current;
-	new->prev = current->prev;
-	if (current->prev != NULL)
-		current->prev->next = new;
-
-	return (current);
+	else
+		printf(" The position you entered, is invalid.\n");
 }
 
 /**
