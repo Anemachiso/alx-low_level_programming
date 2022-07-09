@@ -12,7 +12,7 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	int i;
+	unsigned int i;
 	dlistint_t * new_node, *tmp, *current;
 	current = *h;
 
@@ -22,7 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	tmp = *h;
 	i=1;
 
-	while (i < idx-1 && tmp != NULL)
+	while (i < idx && tmp != NULL)
 	{
 		tmp = tmp->next;
 		i++;
@@ -37,7 +37,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	else if (tmp != NULL)
 	{
 		new_node = malloc(sizeof(dlistint_t));
-		new_node->num = n;
+		new_node->n = n;
 		new_node->next = tmp->next;
 		new_node->prev = tmp;
 
@@ -46,8 +46,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		tmp->next = new_node;
 	}
 
-	else
-		printf(" The position you entered, is invalid.\n");
+	return (new_node);
 }
 
 /**
@@ -71,7 +70,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	new_node->n = n;
 	new_node->next = *head;
-    new_node->prev = NULL;
+	new_node->prev = NULL;
 	*head = new_node;
 
 	return (new_node);
@@ -102,7 +101,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	new_node->n = n;
 	new_node->next = NULL;
-    new_node->prev = current;
+	new_node->prev = current;
 
 	if (current)
 		current->next = new_node;
