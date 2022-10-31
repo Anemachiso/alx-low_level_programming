@@ -186,3 +186,5 @@ int **allocate_map(int n, int m)
 
 
 ## Authors :black_nib:
+
+[Mulugeta Achiso Wodebo](https://www.linkedin.com/in/mulugeta-wodebo-843118170) | [Twitter](https://twitter.com/anem_achiso) | [GitHub](https://github.com/Anemachiso)
